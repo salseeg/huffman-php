@@ -1,0 +1,22 @@
+{
+    "name": "serge/huffman-php",
+    "description": "Simple Huffman coding implementation",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^7.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "serge",
+            "email": "salseeg@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4" : {
+            "Serge\\HuffmanPhp\\": "src/",
+            "Serge\\HuffmanPhp\\Tests\\": "tests/"
+        }
+    }
+}
