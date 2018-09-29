@@ -25,9 +25,12 @@ class BaseFlowTest extends TestCase
         $this->assertEquals($sample, $uncompressed->getData());
     }
 
-    public function testTreePreservingCoded()
+    /**
+     * @param $sample
+     * @dataProvider provideStrings
+     */
+    public function testTreePreservingCoded($sample)
     {
-        $sample = 'Hello world!!!';
 
         $data = new DumbString($sample);
 
@@ -45,6 +48,23 @@ class BaseFlowTest extends TestCase
 
         $this->assertEquals($sample, $uncompressed->getData());
     }
+
+    /**
+     * Provides strings to test
+     *
+     * @return \Generator
+     */
+    public function provideStrings()
+    {
+        yield ['Hello world!!!'];
+
+        foreach(glob(__DIR__.'/_data/*') as $path) {
+            print $path . ' ' .implode(' ', str_split(filesize($path), 3)). PHP_EOL;
+            yield [file_get_contents($path)];
+        }
+    }
+
+
 
 
 }
