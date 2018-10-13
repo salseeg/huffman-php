@@ -38,7 +38,7 @@ class BaseFlowTest extends TestCase
 
         $compressed = $codec->encode($data);
 
-        $binString = $compressed->getRawData();
+        $binString = $compressed->getBitString();
 
         $pureCompressionRatio = round(strlen($sample) / (strlen($binString) / 8.0), 2);
 

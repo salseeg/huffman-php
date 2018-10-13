@@ -17,6 +17,6 @@ class DumbDecoder implements Decoder
      */
     public function decode(Decodable $encoded): Encodable
     {
-        return new DumbString($encoded->getRawData());
+        return new DumbString($encoded->getBitString());
     }
 }

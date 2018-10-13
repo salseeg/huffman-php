@@ -25,7 +25,7 @@ class TreePreservingCodec implements Decoder, Encoder
      */
     public function decode(Decodable $encoded): Encodable
     {
-        $bitString = $encoded->getRawData();
+        $bitString = $encoded->getBitString();
 
         $reverseDict = array_combine(array_values($this->codeDictionary), array_keys($this->codeDictionary));
 

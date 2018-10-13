@@ -13,5 +13,5 @@ interface Decodable
      *
      * @return string
      */
-    public function getRawData(): string;
+    public function getBitString(): string;
 }

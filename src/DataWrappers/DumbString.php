@@ -21,7 +21,7 @@ class DumbString implements Encodable, Decodable
     /**
      * @return string
      */
-    public function getRawData(): string
+    public function getBitString(): string
     {
         return $this->str;
     }
